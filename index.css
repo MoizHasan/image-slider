@@ -1,0 +1,41 @@
+.img-container {
+  border: solid 1px black;
+  width: 720px ;
+  height: 405px;
+}
+
+#images, #images > img {
+  width: inherit;
+  height: inherit;
+  z-index: -1000;
+}
+
+#images > img {
+  display: none;
+}
+
+
+#toggles {
+  margin: auto;
+  width: 100%;
+  position: relative;
+  top: -50%;
+  transform: translateY(50%);
+}
+
+#toggles > * {
+  display: inline;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+#left {
+              transform:scale(-1,1);
+            -webkit-transform:scale(-1,1);
+            -moz-transform:scale(-1,1);
+            -o-transform:scale(-1,1)
+}
+
+#right {
+  float: right;
+}
