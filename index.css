@@ -16,11 +16,19 @@
 
 
 #toggles {
+  visibility: hidden;
   margin: auto;
   width: 100%;
   position: relative;
   top: -50%;
+}
+
+.img-container:hover #toggles {
+  visibility: visible;
+  animation: pull .75s linear 1,
+  fade-in 1.5s linear 1;
   transform: translateY(50%);
+  opacity: .5;
 }
 
 #toggles > * {
@@ -29,13 +37,45 @@
   box-sizing: border-box;
 }
 
+.circles {
+  display: inline-block;
+  position: relative;
+  left: 300px;
+  top: -70px;
+  margin: .5em;
+  height: 15px;
+  width: 15px;
+  border: solid 2px black;
+  border-radius: 20px;
+}
+
+
 #left {
-              transform:scale(-1,1);
-            -webkit-transform:scale(-1,1);
-            -moz-transform:scale(-1,1);
-            -o-transform:scale(-1,1)
+  transform:scale(-1,1);
+  -webkit-transform:scale(-1,1);
+  -moz-transform:scale(-1,1);
+  -o-transform:scale(-1,1)
 }
 
 #right {
   float: right;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .5;
+  }
+}
+
+@keyframes pull {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(50%);
+  }
 }
